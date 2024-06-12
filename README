@@ -29,3 +29,18 @@ opam install dune
 With that you should be able to install herodotos following the instructions in GitHub repository of herodotos.
 https://github.com/coccinelle/herodotos
 
+## Directories
+There is also a directory in /var that points to linuxes in /srv/storage/linuxes@storage1.grenoble.grid5000.fr
+Also need a directory /fast_scratch that is mounted using : 
+mount -t tmpfs tmpfs /fast_scratch
+Make sure to modify permission accordingly
+
+When everything is done you can return to frontend and use tgz-g5k tool to make the image using:
+```bash
+tgz-g5k -m <host_name> -f <image_name>.tar.gz
+```
+and finally create the environment description file accordingly to the grid5000 tutorial at https://www.grid5000.fr/w/Environment_creation.
+
+
+
+

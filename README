@@ -1,0 +1,31 @@
+# How to Recreate Linux Image
+
+## Prerequisites
+- The image was based on tha vailable Debian 12 nfs image deployed using kadeploy.
+
+# Packages Installed
+Packages are installed as root.
+As I'm don't want to forget any packages I installed, I listed them in packages file.
+You can install them using the following command:
+```bash
+apt-get update
+dpkg --set-selections < packages
+apt-get -u dselect-upgrade
+```
+
+You also need to install the following packages using opam:
+camlp4              4.05+1      Camlp4 is a system for writing extensible parsers for programming languages
+ocaml               4.05.0      The OCaml compiler (virtual package)
+ocaml-base-compiler 4.05.0      Official 4.05.0 release
+ocaml-config        1           OCaml Switch Configuration
+ocamlbuild          0.14.3      OCamlbuild is a build system with builtin rules to easily build most OCaml projects
+ocamlfind           1.9.6
+
+You also need dune:
+```bash
+opam install dune
+```
+
+With that you should be able to install herodotos following the instructions in GitHub repository of herodotos.
+https://github.com/coccinelle/herodotos
+
